@@ -1,0 +1,18 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #50afff;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+  &:hover {
+    color: #ac5aff;
+  }
+}
+
+.error {
+  color: red;
+}
