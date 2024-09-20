@@ -1,14 +1,13 @@
-import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Context } from '../../../main.tsx';
+import { useNavigate, Link } from 'react-router-dom';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider
 } from 'firebase/auth';
-import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { auth } from '../../../shared/config';
 import { message } from 'antd';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -32,7 +31,6 @@ type FormFields = z.infer<typeof schema>;
 
 export const AuthForm = () => {
   const navigate = useNavigate();
-  const { auth } = useContext(Context);
 
   const {
     register,
@@ -56,9 +54,7 @@ export const AuthForm = () => {
   const authWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential?.accessToken;
+      await signInWithPopup(auth, provider);
       message.success('Authorization was successful');
       navigate('/', { replace: true });
     } catch (e) {

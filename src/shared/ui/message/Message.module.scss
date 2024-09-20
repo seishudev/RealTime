@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  gap: 15px;
+  max-width: 100%;
+  color: #fff;
+  &.anotherUserMessage {
+    margin-right: auto;
+  }
+  &.currentUserMessage {
+    justify-content: end;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    max-width: 100%;
+    h4 {
+      font-size: 1.2rem;
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 425px) {
+        font-size: 0.8rem;
+      }
+    }
+    .currentUser {
+      border-radius: 10px 0 10px 10px;
+    }
+    .anotherUser {
+      border-radius: 0 10px 10px 10px;
+    }
+    .currentUserName {
+      text-align: end;
+    }
+    p {
+      font-size: 1.2rem;
+      width: fit-content;
+      max-width: 100%;
+      padding: 10px;
+      background-color: #2176ff;
+      word-break: break-word;
+      white-space: normal;
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 425px) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .avatar {
+    font-size: 1.2rem;
+    width: 3.125em;
+    height: 3.125em;
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 425px) {
+      font-size: 0.8rem;
+    }
+  }
+}

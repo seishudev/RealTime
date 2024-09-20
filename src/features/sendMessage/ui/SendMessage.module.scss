@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  .interaction {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #101929;
+    .btn {
+      font-size: 26px;
+      color: #8d9fba;
+      transition: opacity .2s ease-in-out;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    input {
+      display: flex;
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      max-width: 100%;
+      outline: none;
+      border: none;
+      background-color: #101929;
+      &::placeholder {
+        color: #8d9fba;
+      }
+    }
+  }
+}

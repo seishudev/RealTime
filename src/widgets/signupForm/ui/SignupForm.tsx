@@ -1,14 +1,14 @@
-import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Context } from '../../../main.tsx';
+import { useNavigate, Link } from 'react-router-dom';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import {
   createUserWithEmailAndPassword,
+  updateProfile,
   signInWithPopup,
   GoogleAuthProvider
 } from 'firebase/auth';
-import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { auth } from '../../../shared/config';
 import { message } from 'antd';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -34,7 +34,6 @@ type FormFields = z.infer<typeof schema>;
 
 export const SignupForm = () => {
   const navigate = useNavigate();
-  const { auth } = useContext(Context);
 
   const {
     register,
@@ -46,7 +45,14 @@ export const SignupForm = () => {
 
   const onSubmit: SubmitHandler<FormFields> = async data => {
     try {
-      await createUserWithEmailAndPassword(auth, data.email, data.password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+      await updateProfile(userCredential.user, {
+        displayName: `${data.firstName} ${data.lastName}`
+      });
       message.success('Registration was successful');
       navigate('/', { replace: true });
     } catch (e) {
@@ -58,9 +64,7 @@ export const SignupForm = () => {
   const authWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential?.accessToken;
+      await signInWithPopup(auth, provider);
       message.success('Registration was successful');
       navigate('/', { replace: true });
     } catch (e) {

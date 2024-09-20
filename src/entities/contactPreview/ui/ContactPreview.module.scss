@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 10%;
+  padding: 10px 20px;
+  color: #8d9fba;
+  border-bottom: 1px solid #071835;
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    .back {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #8d9fba;
+      span {
+        font-size: 1rem;
+        @media (max-width: 375px) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      .avatar {
+        font-size: 3.5rem;
+        @media (max-width: 1024px) {
+          font-size: 2.7rem;
+        }
+        @media (max-width: 375px) {
+          font-size: 2.3rem;
+        }
+      }
+      h3 {
+        color: #fff;
+        font-size: 1.2em;
+      }
+      p {
+        color: #2a8cc6;
+        font-size: 0.6em;
+      }
+      @media (max-width: 1024px) {
+        font-size: 0.85rem;
+      }
+      @media (max-width: 375px) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .connection {
+    display: flex;
+    gap: 15px;
+    transition: opacity .3s ease-in-out;
+    .icon {
+      font-size: 2rem;
+      &:hover {
+        opacity: 0.6;
+      }
+      @media (max-width: 1024px) {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 375px) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

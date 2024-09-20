@@ -16,6 +16,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@typescript-eslint/no-explicit-any': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/no-unescaped-entities': 'off',
     'prettier/prettier': 'warn'

@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+#root {
+  display: flex;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
 a {
   color: #50afff;
   text-decoration: none;

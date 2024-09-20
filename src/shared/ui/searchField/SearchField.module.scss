@@ -1,0 +1,43 @@
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 3.125rem;
+  padding: 10px;
+  height: 1em;
+  border-radius: 7px;
+  background-color: #101a2a;
+  .magnifer {
+    color: #8d9fba;
+    font-size: 0.6em;
+    transition: opacity .3s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  input {
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    height: 1.5em;
+    width: 100%;
+    color: #fff;
+    background-color: #101a2a;
+    &::placeholder {
+      display: flex;
+      color: #8d9fba;
+    }
+    @media (max-width: 1440px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 1024px) {
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 1440px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 30%;
+  padding: 20px 10px;
+  border-right: 1px solid #8d9fba;
+  background-color: #040e1f;
+  .entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    color: #fff;
+    h2 {
+      font-size: 2rem;
+      @media (max-width: 1440px) {
+        font-size: 1.8rem;
+      }
+      @media (max-width: 1024px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+  @media (max-width: 430px) {
+    width: 100%;
+  }
+}

@@ -1,13 +1,13 @@
 import { Outlet } from 'react-router-dom';
+import { Sidebar } from '../../shared/ui';
 
 export const Layout = () => {
   return (
     <>
-      <header></header>
+      <Sidebar />
       <main>
         <Outlet />
       </main>
-      <footer></footer>
     </>
   );
 };

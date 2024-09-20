@@ -1,0 +1,49 @@
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  color: #8d9fba;
+  background-color: #071835;
+  border-radius: 8px;
+  transition: opacity .1s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+  .icon {
+    font-size: 3.6rem;
+    @media (max-width: 1280px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 1024px) {
+      font-size: 2.4rem;
+    }
+    @media (max-width: 430px) {
+      font-size: 3rem;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1px;
+    h3 {
+      color: #fff;
+      font-weight: 400;
+      font-size: 1.3em;
+    }
+    p {
+      color: #2176ff;
+      font-size: 0.8em;
+    }
+    @media (max-width: 1280px) {
+      font-size: 0.8rem;
+    }
+    @media (max-width: 1024px) {
+      font-size: 0.6rem;
+    }
+    @media (max-width: 430px) {
+      font-size: 0.8rem;
+    }
+  }
+}
