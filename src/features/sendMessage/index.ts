@@ -1,1 +1,1 @@
-export { SendMessage } from './ui/SendMessage.tsx';
+export { SendMessage } from './ui/SendMessage';

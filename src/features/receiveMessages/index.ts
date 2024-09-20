@@ -1,1 +1,1 @@
-export { ReceiveMessages } from './ui/ReceiveMessages.tsx';
+export { ReceiveMessages } from './ui/ReceiveMessages';

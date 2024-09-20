@@ -1,1 +1,1 @@
-export { ContactPreview } from './ui/ContactPreview.tsx';
+export { ContactPreview } from './ui/ContactPreview';

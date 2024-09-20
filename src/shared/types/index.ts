@@ -1,1 +1,1 @@
-export { IMessage } from './MessageType.ts';
+export { IMessage } from './MessageType';

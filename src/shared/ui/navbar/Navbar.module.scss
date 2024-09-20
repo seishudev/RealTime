@@ -16,6 +16,9 @@
     @media (max-width: 1024px) {
       font-size: 1.6rem;
     }
+    @media (max-width: 430px) {
+      display: none;
+    }
   }
   .wrapper {
     display: flex;
@@ -40,6 +43,22 @@
       @media (max-width: 1024px) {
         font-size: 2rem;
       }
+      @media (max-width: 430px) {
+        font-size: 2.5rem;
+      }
+      @media (max-height: 800px) {
+        font-size: 1.8rem;
+      }
     }
+    @media (max-width: 430px) {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+  @media (max-width: 430px) {
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
   }
 }

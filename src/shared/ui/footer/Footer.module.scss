@@ -1,0 +1,10 @@
+.section {
+  display: none;
+  background-color: #101929;
+  padding: 5px;
+  width: 100%;
+  height: 7%;
+  @media (max-width: 430px) {
+    display: flex;
+  };
+}
