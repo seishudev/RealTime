@@ -33,8 +33,8 @@ export const ReceiveMessages = () => {
   }, []);
 
   return (
-    <div className={cl.chat}>
+    <section className={cl.chat}>
       {messages?.map(message => <Message key={message.id} message={message} />)}
-    </div>
+    </section>
   );
 };

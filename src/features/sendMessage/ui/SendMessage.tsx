@@ -20,7 +20,7 @@ export const SendMessage = () => {
   };
 
   return (
-    <div className={cl.container}>
+    <section className={cl.container}>
       <div className={cl.interaction}>
         <input
           type='text'
@@ -30,6 +30,6 @@ export const SendMessage = () => {
         />
         {message && <SendIcon className={cl.btn} onClick={sendMessage} />}
       </div>
-    </div>
+    </section>
   );
 };

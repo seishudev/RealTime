@@ -14,7 +14,7 @@ export const ContactPreview = ({ name, description }: ContactPreviewProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className={cl.container}>
+    <section className={cl.container}>
       <div className={cl.user}>
         <div className={cl.back} onClick={() => navigate('/')}>
           <KeyboardBackspaceIcon />
@@ -32,6 +32,6 @@ export const ContactPreview = ({ name, description }: ContactPreviewProps) => {
         <VideocamIcon className={cl.icon} />
         <CallIcon className={cl.icon} />
       </div>
-    </div>
+    </section>
   );
 };

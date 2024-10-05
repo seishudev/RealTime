@@ -34,6 +34,50 @@ a {
   }
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 10px;
+  width: fit-content;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #2d95f0;
+  &.purple {
+    background-color: #8d15ff;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.1rem;
+  padding: 20px 10px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #040e1f;
+}
+
 .error {
   color: red;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:  rgba(141, 21, 255, 1);
+  border-radius: 10px;
+  &:hover {
+    background-color: rgba(141, 21, 255, 0.9);
+  }
 }

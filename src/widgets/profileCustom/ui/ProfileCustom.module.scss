@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px 20px;
+  width: 30%;
+  height: 60%;
+  color: #8d9fba;
+  background-color: #101929;
+  border-radius: 15px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h2 {
+      font-size: 2em;
+    }
+    .listDetails {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}

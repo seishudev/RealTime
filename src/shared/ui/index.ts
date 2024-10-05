@@ -4,3 +4,5 @@ export { Navbar } from './navbar/Navbar';
 export { SwitchUi } from './switchUi/SwitchUi';
 export { SearchField } from './searchField/SearchField';
 export { Message } from './message/Message';
+export { Field } from './field/Field';
+export { Button } from './button/Button';

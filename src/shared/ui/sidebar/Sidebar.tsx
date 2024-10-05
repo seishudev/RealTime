@@ -4,9 +4,9 @@ import { auth } from '../../config';
 import cl from './Sidebar.module.scss';
 
 export const Sidebar = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
-  if (!user) return;
+  if (loading || !user) return null;
 
   return (
     <aside className={cl.container}>
