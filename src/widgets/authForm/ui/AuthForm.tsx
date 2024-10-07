@@ -1,14 +1,8 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import {
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider
-} from 'firebase/auth';
+import { accountAuth, authWithGoogle } from '../../../shared/api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { auth } from '../../../shared/config';
-import { message } from 'antd';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -41,26 +35,7 @@ export const AuthForm = () => {
   });
 
   const onSubmit: SubmitHandler<FormFields> = async data => {
-    try {
-      await signInWithEmailAndPassword(auth, data.email, data.password);
-      message.success('Authorization was successful');
-      navigate('/', { replace: true });
-    } catch (e) {
-      message.error('An authorization error has occurred');
-      throw new Error(`An authorization error has occurred: ${e.code}`);
-    }
-  };
-
-  const authWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      message.success('Authorization was successful');
-      navigate('/', { replace: true });
-    } catch (e) {
-      message.error('An authorization error has occurred');
-      throw new Error(`An authorization error has occurred: ${e.code}`);
-    }
+    await accountAuth(data, navigate);
   };
 
   return (
@@ -76,7 +51,7 @@ export const AuthForm = () => {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <GoogleIcon onClick={authWithGoogle} />
+            <GoogleIcon onClick={() => authWithGoogle(navigate)} />
           </Avatar>
           <Typography component='h1' variant='h5'>
             Sign in

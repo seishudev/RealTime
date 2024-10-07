@@ -1,15 +1,8 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-  signInWithPopup,
-  GoogleAuthProvider
-} from 'firebase/auth';
+import { accountRegistration, authWithGoogle } from '../../../shared/api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { auth } from '../../../shared/config';
-import { message } from 'antd';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -44,33 +37,7 @@ export const SignupForm = () => {
   });
 
   const onSubmit: SubmitHandler<FormFields> = async data => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password
-      );
-      await updateProfile(userCredential.user, {
-        displayName: `${data.firstName} ${data.lastName}`
-      });
-      message.success('Registration was successful');
-      navigate('/', { replace: true });
-    } catch (e) {
-      message.error('A registration error has occurred');
-      throw new Error(`A registration error has occurred: ${e.code}`);
-    }
-  };
-
-  const authWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      message.success('Registration was successful');
-      navigate('/', { replace: true });
-    } catch (e) {
-      message.error('A registration error has occurred');
-      throw new Error(`A registration error has occurred: ${e.code}`);
-    }
+    await accountRegistration(data, navigate);
   };
 
   return (
@@ -86,7 +53,7 @@ export const SignupForm = () => {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <GoogleIcon onClick={authWithGoogle} />
+            <GoogleIcon onClick={() => authWithGoogle(navigate)} />
           </Avatar>
           <Typography component='h1' variant='h5'>
             Sign up
