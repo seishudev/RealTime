@@ -5,4 +5,5 @@ export { SwitchUi } from './switchUi/SwitchUi';
 export { SearchField } from './searchField/SearchField';
 export { Message } from './message/Message';
 export { Field } from './field/Field';
+export { AccountDetail } from './accountDetail/AccountDetail';
 export { Button } from './button/Button';

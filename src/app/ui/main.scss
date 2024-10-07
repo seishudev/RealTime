@@ -60,6 +60,11 @@ a {
   border-radius: 8px;
   color: #fff;
   background-color: #040e1f;
+  @media (max-height: 700px) {
+    padding: 15px 10px;
+    font-size: 0.8rem;
+    height: 1.8rem;
+  }
 }
 
 .error {
