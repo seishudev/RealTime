@@ -1,6 +1,6 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../config';
-import { IMessage } from '../../types';
+import { IMessage } from '../../model/MessageInterface';
 import Avatar from '@mui/material/Avatar';
 import { deepPurple } from '@mui/material/colors';
 import cn from 'classnames';

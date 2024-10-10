@@ -1,8 +1,9 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { accountAuth, authWithGoogle } from '../../../shared/api';
+import { signInFields } from '../../../shared/model/authSchema';
+import { signInSchema } from '../../../shared/model';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,13 +17,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const defaultTheme = createTheme();
 
-const schema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6, { message: 'Must be at least 6 characters' })
-});
-
-type FormFields = z.infer<typeof schema>;
-
 export const AuthForm = () => {
   const navigate = useNavigate();
 
@@ -30,11 +24,11 @@ export const AuthForm = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting }
-  } = useForm<FormFields>({
-    resolver: zodResolver(schema)
+  } = useForm<signInFields>({
+    resolver: zodResolver(signInSchema)
   });
 
-  const onSubmit: SubmitHandler<FormFields> = async data => {
+  const onSubmit: SubmitHandler<signInFields> = async data => {
     await accountAuth(data, navigate);
   };
 
