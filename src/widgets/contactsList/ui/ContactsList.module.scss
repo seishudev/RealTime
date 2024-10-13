@@ -6,6 +6,9 @@
   padding: 20px 10px;
   border-right: 1px solid #8d9fba;
   background-color: var(--background-color);
+  @media (max-width: 430px) {
+    border: none;
+  }
   .entry {
     display: flex;
     flex-direction: column;
