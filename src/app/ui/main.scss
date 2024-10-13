@@ -7,14 +7,13 @@
 #root {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
-html {
-  height: fit-content;
-}
 body {
-  height: fit-content;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  overflow: hidden;
   --background-color: #fff;
   --text-color: #000;
   --search-background-color: #d2dbff;
@@ -26,8 +25,6 @@ body {
   --settings-text-color: #000;
   --settings-border-color: #788bff;
   --input-text-color: #788bff;
-  font-family: "Montserrat", sans-serif;
-  overflow: hidden;
   &.dark {
     --background-color: #040e1f;
     --text-color: #fff;
