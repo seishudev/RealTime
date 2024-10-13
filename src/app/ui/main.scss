@@ -10,7 +10,11 @@
   height: 100vh;
 }
 
+html {
+  height: fit-content;
+}
 body {
+  height: fit-content;
   --background-color: #fff;
   --text-color: #000;
   --search-background-color: #d2dbff;
