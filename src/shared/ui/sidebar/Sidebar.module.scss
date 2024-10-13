@@ -9,4 +9,9 @@
   @media (max-width: 768px) {
     display: none;
   }
+  .wrapper {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
 }

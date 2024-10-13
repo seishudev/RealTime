@@ -1,5 +1,5 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Navbar, SwitchUi } from '../';
+import { Navbar, ThemeSwitcher } from '../';
 import { auth } from '../../config';
 import cl from './Sidebar.module.scss';
 
@@ -11,7 +11,9 @@ export const Sidebar = () => {
   return (
     <aside className={cl.container}>
       <Navbar />
-      <SwitchUi />
+      <div className={cl.wrapper}>
+        <ThemeSwitcher />
+      </div>
     </aside>
   );
 };

@@ -5,7 +5,7 @@
   width: 30%;
   padding: 20px 10px;
   border-right: 1px solid #8d9fba;
-  background-color: #040e1f;
+  background-color: var(--background-color);
   .entry {
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@
     color: #fff;
     h2 {
       font-size: 2rem;
+      color: var(--text-color);
       @media (max-width: 1440px) {
         font-size: 1.8rem;
       }

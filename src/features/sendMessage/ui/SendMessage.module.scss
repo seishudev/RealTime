@@ -7,10 +7,10 @@
     align-items: center;
     padding: 12px;
     border-radius: 6px;
-    background-color: #101929;
+    background-color: var(--tab-color);
     .btn {
       font-size: 26px;
-      color: #8d9fba;
+      color: var(--search-text-color);
       transition: opacity .2s ease-in-out;
       &:hover {
         opacity: 0.8;
@@ -18,15 +18,15 @@
     }
     input {
       display: flex;
-      color: #fff;
+      color: var(--text-color);
       padding: 10px;
       width: 100%;
       max-width: 100%;
       outline: none;
       border: none;
-      background-color: #101929;
+      background-color: var(--tab-color);
       &::placeholder {
-        color: #8d9fba;
+        color: var(--search-text-color);
       }
     }
   }

@@ -1,5 +1,6 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../../shared/config';
+import { ThemeSwitcher } from '../../../shared/ui';
 import Avatar from '@mui/material/Avatar';
 import { deepPurple } from '@mui/material/colors';
 import cl from './ProfilePicture.module.scss';
@@ -21,6 +22,9 @@ export const ProfilePicture = () => {
         >
           {!user?.photoURL && user?.displayName ? user.displayName[0] : ''}
         </Avatar>
+      </div>
+      <div className={cl.theme}>
+        <ThemeSwitcher />
       </div>
     </section>
   );

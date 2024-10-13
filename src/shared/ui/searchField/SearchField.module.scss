@@ -6,9 +6,9 @@
   padding: 10px;
   height: 1em;
   border-radius: 7px;
-  background-color: #101a2a;
+  background-color: var(--search-background-color);
   .magnifer {
-    color: #8d9fba;
+    color: var(--search-text-color);
     font-size: 0.6em;
     transition: opacity .3s ease-in-out;
     &:hover {
@@ -21,11 +21,11 @@
     outline: none;
     height: 1.5em;
     width: 100%;
-    color: #fff;
-    background-color: #101a2a;
+    color: var(--text-color);
+    background-color: var(--search-background-color);
     &::placeholder {
       display: flex;
-      color: #8d9fba;
+      color: var(--search-text-color)
     }
     @media (max-width: 1440px) {
       font-size: 1rem;

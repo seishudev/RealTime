@@ -11,8 +11,32 @@
 }
 
 body {
+  --background-color: #fff;
+  --text-color: #000;
+  --search-background-color: #d2dbff;
+  --search-text-color: #788bff;
+  --contact-background-color: #d2dbff;
+  --avatar-color: #788bff;
+  --tab-color: #d2dbff;
+  --settings-background-color: #fff;
+  --settings-text-color: #000;
+  --settings-border-color: #788bff;
+  --input-text-color: #788bff;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;
+  &.dark {
+    --background-color: #040e1f;
+    --text-color: #fff;
+    --search-background-color: #101a2a;
+    --search-text-color: #8d9fba;
+    --contact-background-color: #071835;
+    --avatar-color: #8d9fba;
+    --tab-color: #101929;
+    --settings-background-color: #101a2a;
+    --settings-text-color: #8d9fba;
+    --settings-border-color: none;
+    --input-text-color: #fff;
+  }
 }
 
 .wrapper {
@@ -55,11 +79,11 @@ a {
   height: 2rem;
   font-size: 1.1rem;
   padding: 20px 10px;
-  border: none;
+  border: 1px solid var(--settings-border-color);
   outline: none;
   border-radius: 8px;
-  color: #fff;
-  background-color: #040e1f;
+  color: var(--text-color);
+  background-color: var(--background-color);
   @media (max-height: 700px) {
     padding: 15px 10px;
     font-size: 0.8rem;
